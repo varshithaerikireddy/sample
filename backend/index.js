@@ -6,11 +6,12 @@ const todoRoute = require("./routes/todos");
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 3500;
+const MONGODB_URL="mongodb://127.0.0.1:27017/Todo"
 
 /* MONGODB URL */
 mongoose
-  .connect(process.env.MONGODB_URL)
+  .connect(MONGODB_URL)
   .then(() => {
     console.log("MongoDB connected successfully");
   })
